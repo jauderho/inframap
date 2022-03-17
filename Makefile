@@ -12,7 +12,7 @@ PLATFORMS=darwin linux windows
 VERSION= $(shell git describe --tags --always)
 
 # Setup the -ldflags option for go build here, interpolate the variable values
-LDFLAGS=-ldflags "-X github.com/cycloidio/inframap/cmd.Version=${VERSION}"
+LDFLAGS=-ldflags "-s -w -X github.com/cycloidio/inframap/cmd.Version=${VERSION}"
 
 .PHONY: help
 help: Makefile ## This help dialog
