@@ -102,7 +102,7 @@ func findEdgeConnections(g *graph.Graph, n *graph.Node, visited map[string]struc
 					// to the first position of the
 					// connections
 					con := []*connection{
-						&connection{
+						{
 							Node:      en,
 							Direction: direc,
 						},

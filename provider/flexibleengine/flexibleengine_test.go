@@ -13,7 +13,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_compute_interface_attach_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"instance_id": "in-id",
 			},
 		}
@@ -27,7 +27,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_networking_secgroup_rule_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"direction":       "ingress",
 				"remote_group_id": "in-id",
 			},
@@ -42,7 +42,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_networking_secgroup_rule_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"direction":       "egress",
 				"remote_group_id": "out-id",
 			},
@@ -57,7 +57,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_networking_port_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"security_group_ids": []interface{}{
 					"in-id",
 				},
@@ -73,7 +73,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_lb_listener_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"loadbalancer_id": "in-id",
 			},
 		}
@@ -87,7 +87,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_lb_pool_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"listener_id": "in-id",
 			},
 		}
@@ -101,7 +101,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "flexibleengine_lb_member_v2"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"pool_id": "in-id",
 			},
 		}

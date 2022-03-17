@@ -47,23 +47,23 @@ func TestFromState(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "module.node_pool.scaleway_k8s_pool_beta.nodes",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.kapsule.scaleway_k8s_cluster_beta.cluster",
 				},
-				&graph.Node{
+				{
 					Canonical: "scaleway_instance_placement_group.infra",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Source:     "module.node_pool.scaleway_k8s_pool_beta.nodes",
 					Target:     "module.kapsule.scaleway_k8s_cluster_beta.cluster",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.node_pool.scaleway_k8s_pool_beta.nodes",
 					Target:     "scaleway_instance_placement_group.infra",
 					Canonicals: []string(nil),
@@ -96,39 +96,39 @@ func TestFromState_AWS(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "module.lemp.aws_lb.tQBgz",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.lemp.aws_launch_template.vIkyE",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.lemp.aws_db_instance.Cpbzf",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/443->443",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/80->80",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/80->80",
 					Target:     "module.lemp.aws_lb.tQBgz",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/443->443",
 					Target:     "module.lemp.aws_lb.tQBgz",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.lemp.aws_lb.tQBgz",
 					Target:     "module.lemp.aws_launch_template.vIkyE",
 					Canonicals: []string{"module.lemp.aws_security_group.rZnGI", "module.lemp.aws_security_group.YPHPR"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.lemp.aws_launch_template.vIkyE",
 					Target:     "module.lemp.aws_db_instance.Cpbzf",
 					Canonicals: []string{"module.lemp.aws_security_group.YPHPR", "module.lemp.aws_security_group.LHwFh"},
@@ -150,47 +150,47 @@ func TestFromState_AWS(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "module.magento.aws_elb.tMVdH",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.magento.aws_instance.TObJL",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.magento.aws_db_instance.qktIK",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.magento.aws_elasticache_cluster.VUhMF",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/443->443",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/80->80",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/80->80",
 					Target:     "module.magento.aws_elb.tMVdH",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/443->443",
 					Target:     "module.magento.aws_elb.tMVdH",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.magento.aws_elb.tMVdH",
 					Target:     "module.magento.aws_instance.TObJL",
 					Canonicals: []string{"module.magento.aws_security_group.kuDkz", "module.magento.aws_security_group_rule.pMOSN", "module.magento.aws_security_group.UKblk"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.magento.aws_instance.TObJL",
 					Target:     "module.magento.aws_db_instance.qktIK",
 					Canonicals: []string{"module.magento.aws_security_group.mzSGd", "module.magento.aws_security_group.kuDkz"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.magento.aws_instance.TObJL",
 					Target:     "module.magento.aws_elasticache_cluster.VUhMF",
 					Canonicals: []string{"module.magento.aws_security_group.KaWAd", "module.magento.aws_security_group.kuDkz"},
@@ -212,18 +212,18 @@ func TestFromState_AWS(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "module.tf-8-wordpress-demo.aws_lb.load-balancer",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.tf-8-wordpress-demo.aws_ecs_service.wordpress",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.tf-8-wordpress-demo.aws_ecs_cluster.ecs-cluster",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Source: "module.tf-8-wordpress-demo.aws_lb.load-balancer",
 					Target: "module.tf-8-wordpress-demo.aws_ecs_service.wordpress",
 					Canonicals: []string{
@@ -232,7 +232,7 @@ func TestFromState_AWS(t *testing.T) {
 						"module.tf-8-wordpress-demo.aws_security_group_rule.allow-alb",
 					},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.tf-8-wordpress-demo.aws_ecs_service.wordpress",
 					Target:     "module.tf-8-wordpress-demo.aws_ecs_cluster.ecs-cluster",
 					Canonicals: []string(nil),
@@ -254,15 +254,15 @@ func TestFromState_AWS(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "aws_instance.bastion0",
 				},
-				&graph.Node{
+				{
 					Canonical: "aws_instance.prometheus-prometheus-eu-we1-infra",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Source: "aws_instance.prometheus-prometheus-eu-we1-infra",
 					Target: "aws_instance.bastion0",
 					Canonicals: []string{
@@ -298,94 +298,94 @@ func TestFromState_AWS(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_alb.front",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_cloudfront_distribution.cdn",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_s3_bucket.medias",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_instance.batch",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_ebs_volume.flux",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_db_instance.website",
 				},
-				&graph.Node{
+				{
 					Canonical: "module.cycloid.aws_elasticache_cluster.redis",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/443->443",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/80->80",
 				},
-				&graph.Node{
+				{
 					Canonical: "im_out.tcp/2222->2222",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/80->80",
 					Target:     "module.cycloid.aws_alb.front",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/443->443",
 					Target:     "module.cycloid.aws_alb.front",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/2222->2222",
 					Target:     "module.cycloid.aws_alb.front",
 					Canonicals: []string{"module.cycloid.aws_security_group.alb-front"},
 				},
-				&graph.Edge{
+				{
 					Source:     "im_out.tcp/2222->2222",
 					Target:     "module.cycloid.aws_instance.batch",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_cloudfront_distribution.cdn",
 					Target:     "module.cycloid.aws_alb.front",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_cloudfront_distribution.cdn",
 					Target:     "module.cycloid.aws_s3_bucket.medias",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_alb.front",
 					Target:     "module.cycloid.aws_instance.batch",
 					Canonicals: []string{"module.cycloid.aws_security_group.batch", "module.cycloid.aws_security_group.alb-front"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_ebs_volume.flux",
 					Target:     "module.cycloid.aws_instance.batch",
 					Canonicals: []string(nil),
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_instance.batch",
 					Target:     "module.cycloid.aws_db_instance.website",
 					Canonicals: []string{"module.cycloid.aws_security_group.rds-website", "module.cycloid.aws_security_group.batch"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_alb.front",
 					Target:     "module.cycloid.aws_db_instance.website",
 					Canonicals: []string{"module.cycloid.aws_security_group.rds-website", "module.cycloid.aws_security_group.front", "module.cycloid.aws_security_group.alb-front"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_instance.batch",
 					Target:     "module.cycloid.aws_elasticache_cluster.redis",
 					Canonicals: []string{"module.cycloid.aws_security_group.redis", "module.cycloid.aws_security_group.batch"},
 				},
-				&graph.Edge{
+				{
 					Source:     "module.cycloid.aws_alb.front",
 					Target:     "module.cycloid.aws_elasticache_cluster.redis",
 					Canonicals: []string{"module.cycloid.aws_security_group.redis", "module.cycloid.aws_security_group.front", "module.cycloid.aws_security_group.alb-front"},
@@ -408,18 +408,18 @@ func TestFromState_OpenStack(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "openstack_compute_instance_v2.AaCFA",
 				},
-				&graph.Node{
+				{
 					Canonical: "openstack_compute_instance_v2.gZfYc",
 				},
-				&graph.Node{
+				{
 					Canonical: "openstack_lb_loadbalancer_v2.PPdjL",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Target: "openstack_compute_instance_v2.gZfYc",
 					Source: "openstack_compute_instance_v2.AaCFA",
 					Canonicals: []string{
@@ -430,7 +430,7 @@ func TestFromState_OpenStack(t *testing.T) {
 						"openstack_networking_secgroup_v2.ilWCI",
 					},
 				},
-				&graph.Edge{
+				{
 					Target: "openstack_compute_instance_v2.gZfYc",
 					Source: "openstack_lb_loadbalancer_v2.PPdjL",
 					Canonicals: []string{
@@ -455,15 +455,15 @@ func TestFromState_OpenStack(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "openstack_compute_instance_v2.sjSbA",
 				},
-				&graph.Node{
+				{
 					Canonical: "openstack_compute_instance_v2.PiGtZ",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Target: "openstack_compute_instance_v2.sjSbA",
 					Source: "openstack_compute_instance_v2.PiGtZ",
 					Canonicals: []string{
@@ -494,18 +494,18 @@ func TestFromState_FlexibleEngine(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_compute_instance_v2.Aumwn",
 				},
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_compute_instance_v2.bkbLl",
 				},
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_blockstorage_volume_v2.hOHQu",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Target: "flexibleengine_compute_instance_v2.Aumwn",
 					Source: "flexibleengine_compute_instance_v2.bkbLl",
 					Canonicals: []string{
@@ -516,12 +516,12 @@ func TestFromState_FlexibleEngine(t *testing.T) {
 						"flexibleengine_networking_secgroup_v2.uiWdG",
 					},
 				},
-				&graph.Edge{
+				{
 					Target:     "flexibleengine_blockstorage_volume_v2.hOHQu",
 					Source:     "flexibleengine_compute_instance_v2.bkbLl",
 					Canonicals: nil,
 				},
-				&graph.Edge{
+				{
 					Target:     "flexibleengine_blockstorage_volume_v2.hOHQu",
 					Source:     "flexibleengine_compute_instance_v2.Aumwn",
 					Canonicals: nil,
@@ -543,15 +543,15 @@ func TestFromState_FlexibleEngine(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_compute_instance_v2.CpCKR",
 				},
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_compute_instance_v2.uwGDt",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Target: "flexibleengine_compute_instance_v2.CpCKR",
 					Source: "flexibleengine_compute_instance_v2.uwGDt",
 					Canonicals: []string{
@@ -579,15 +579,15 @@ func TestFromState_FlexibleEngine(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_compute_instance_v2.KnHdC",
 				},
-				&graph.Node{
+				{
 					Canonical: "flexibleengine_compute_instance_v2.LJwaI",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Target: "flexibleengine_compute_instance_v2.KnHdC",
 					Source: "flexibleengine_compute_instance_v2.LJwaI",
 					Canonicals: []string{
@@ -619,15 +619,15 @@ func TestFromState_Google(t *testing.T) {
 
 		eg := &graph.Graph{
 			Nodes: []*graph.Node{
-				&graph.Node{
+				{
 					Canonical: "google_compute_instance.ZthAT",
 				},
-				&graph.Node{
+				{
 					Canonical: "google_compute_instance.lodiw",
 				},
 			},
 			Edges: []*graph.Edge{
-				&graph.Edge{
+				{
 					Target: "google_compute_instance.lodiw",
 					Source: "google_compute_instance.ZthAT",
 					Canonicals: []string{

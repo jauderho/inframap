@@ -611,12 +611,12 @@ func TestInvertEdge(t *testing.T) {
 		require.NoError(t, err)
 
 		assert.Equal(t, []*graph.Edge{
-			&graph.Edge{
+			{
 				ID:     "1",
 				Source: n2.ID,
 				Target: n1.ID,
 			},
-			&graph.Edge{
+			{
 				ID:     "2",
 				Source: n2.ID,
 				Target: n3.ID,

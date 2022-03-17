@@ -19,7 +19,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		tagOut := "tag-out"
 		rs := "google_compute_firewall"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"direction": "INGRESS",
 				"target_tags": []interface{}{
 					tagOut,
@@ -28,13 +28,13 @@ func TestResourceInOutNodes(t *testing.T) {
 					tagIn,
 				},
 			},
-			"in-node-id": map[string]interface{}{
+			"in-node-id": {
 				"id": inid,
 				"tags": []interface{}{
 					tagIn,
 				},
 			},
-			"out-node-id": map[string]interface{}{
+			"out-node-id": {
 				"id": outid,
 				"tags": []interface{}{
 					tagOut,
@@ -55,7 +55,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		tagOut := "tag-out"
 		rs := "google_compute_firewall"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"direction": "INGRESS",
 				"target_tags": []interface{}{
 					tagOut,
@@ -64,13 +64,13 @@ func TestResourceInOutNodes(t *testing.T) {
 					tagIn,
 				},
 			},
-			"in-node-id": map[string]interface{}{
+			"in-node-id": {
 				provider.HCLCanonicalKey: incan,
 				"tags": []interface{}{
 					tagIn,
 				},
 			},
-			"out-node-id": map[string]interface{}{
+			"out-node-id": {
 				provider.HCLCanonicalKey: outcan,
 				"tags": []interface{}{
 					tagOut,
@@ -89,13 +89,13 @@ func TestResourceInOutNodes(t *testing.T) {
 		tagIn := "tag-in"
 		rs := "google_compute_firewall"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"direction": "EGRESS",
 				"target_tags": []interface{}{
 					tagIn,
 				},
 			},
-			"in-node-id": map[string]interface{}{
+			"in-node-id": {
 				"id": inid,
 				"tags": []interface{}{
 					tagIn,
@@ -114,13 +114,13 @@ func TestResourceInOutNodes(t *testing.T) {
 		tagIn := "tag-in"
 		rs := "google_compute_firewall"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"direction": "EGRESS",
 				"target_tags": []interface{}{
 					tagIn,
 				},
 			},
-			"in-node-id": map[string]interface{}{
+			"in-node-id": {
 				provider.HCLCanonicalKey: incan,
 				"tags": []interface{}{
 					tagIn,

@@ -13,7 +13,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "aws_security_group"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"ingress": []interface{}{
 					map[string]interface{}{
 						"security_groups": []interface{}{
@@ -40,7 +40,7 @@ func TestResourceInOutNodes(t *testing.T) {
 		id := "id"
 		rs := "aws_security_group_rule"
 		cfg := map[string]map[string]interface{}{
-			id: map[string]interface{}{
+			id: {
 				"source_security_group_id": "in-id",
 				"security_group_id":        "out-id",
 			},
