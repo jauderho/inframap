@@ -1,4 +1,4 @@
-FROM golang:1.18.0-alpine3.15@sha256:fcb74726937b96b4cc5dc489dad1f528922ba55604d37ceb01c98333bcca014f as builder
+FROM golang:1.18.0-alpine3.15@sha256:6fd04df1b7ba6253a09b4bd3f37cc1fb69903a60209ef959485328b1c2902327 as builder
 
 WORKDIR /app
 
