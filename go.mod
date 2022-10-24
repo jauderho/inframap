@@ -28,7 +28,7 @@ require (
 	github.com/satori/go.uuid v1.2.0
 	github.com/spf13/afero v1.9.2
 	github.com/spf13/cobra v1.6.0
-	github.com/stretchr/testify v1.8.0
+	github.com/stretchr/testify v1.8.1
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
 	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
