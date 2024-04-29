@@ -11,6 +11,6 @@ COPY . .
 RUN apk -q --no-progress add git make; \
 	make build
 
-FROM alpine:3.17.2@sha256:69665d02cb32192e52e07644d76bc6f25abeb5410edc1c7a81a10ba3f0efb90a
+FROM alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
 COPY --from=builder /app/inframap /app/
 ENTRYPOINT ["/app/inframap"]
